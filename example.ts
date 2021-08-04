@@ -1,10 +1,5 @@
-# page_iter
+import { PagedHandler, pageIter } from "./mod.ts";
 
-Iterate through paginated api results
-
-## Example
-
-```ts
 interface Todo {
   id: number;
   title: string;
@@ -34,4 +29,3 @@ const fetchTodos: PagedHandler<Todo> = async (page: number) => {
 for await (const todo of pageIter(fetchTodos)) {
   console.log(todo.id, todo.title);
 }
-```
